@@ -13,6 +13,18 @@ contains **no** operational, assembly, flight-control, guidance, or targeting
 instructions, and nothing about modifying any platform for weapons. See
 [DISCLAIMER.md](DISCLAIMER.md).
 
+## How it's organized
+
+```mermaid
+flowchart LR
+  MIL[military systems<br/>UAVs · loitering munitions · USVs] --> CAT[(catalog CSVs)]
+  COM[commercial + open stacks<br/>DJI · PX4 · ArduPilot · MAVLink] --> CAT
+  NV[NVIDIA HF models<br/>GR00T · Cosmos · Nemotron] --> CAT
+  CAT --> VAL[stdlib validator<br/>CI selftest]
+  CAT --> DOCS[docs · counter-UAS sensor selection]
+  NV --> INST[install_models.py<br/>multi-step menu installer]
+```
+
 ## What's inside
 
 | File | Rows | Contents |
