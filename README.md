@@ -25,6 +25,7 @@ Human-readable write-ups:
 - [`docs/military-systems.md`](docs/military-systems.md)
 - [`docs/commercial-and-open.md`](docs/commercial-and-open.md)
 - [`docs/nvidia-models.md`](docs/nvidia-models.md)
+- [`docs/counter-uas-selection.md`](docs/counter-uas-selection.md) — defensive drone-detection sensor selection guide
 - [`SOURCES.md`](SOURCES.md) · [`CHANGELOG.md`](CHANGELOG.md)
 
 ## Validate

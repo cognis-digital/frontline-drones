@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0] — 2026-06-13
+### Added
+- `docs/counter-uas-selection.md` — a defensive **drone-detection sensor selection
+  guide**: modality trade-offs (RF/radar/acoustic/EO-IR), the fiber-optic-drone blind
+  spot for RF-only systems, scenario-based recommendations (fixed-site/mobile/covert/
+  maritime), a selection checklist, and representative detection vendors. Detection/
+  situational-awareness only — no mitigation/defeat procedures.
+
 ## [0.2.0] — 2026-06-13
 ### Added
 - `install_models.py` — a customizable, stdlib multi-step menu that turns the NVIDIA
