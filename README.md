@@ -71,7 +71,7 @@ citing.
 - [`stixgen`](https://github.com/cognis-digital/stixgen) · [`attackmap`](https://github.com/cognis-digital/attackmap) · [`ttphunt`](https://github.com/cognis-digital/ttphunt) — threat-intel tooling
 - [`edgemesh`](https://github.com/cognis-digital/edgemesh) — run any model privately across your own hardware
 
-**280+ open security & OSINT tools →** [github.com/cognis-digital](https://github.com/cognis-digital)
+**300+ open security & OSINT tools →** [github.com/cognis-digital](https://github.com/cognis-digital)
 
 ## License
 
