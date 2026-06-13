@@ -62,6 +62,17 @@ model card, as NVIDIA revises terms frequently. This catalog was compiled from
 the sources in [SOURCES.md](SOURCES.md); verify against the primary pages before
 citing.
 
+## Related Cognis tools — defense / drone / maritime OSINT cluster
+
+- [`awesome-drone-warfare-osint`](https://github.com/cognis-digital/awesome-drone-warfare-osint) — citation-grade dataset (8,300+ components / 195+ platforms) + compliance query CLI
+- [`uaslog`](https://github.com/cognis-digital/uaslog) — counter-UAS telemetry/log analyzer (detection events, RF bands, tracks)
+- [`maritimeint`](https://github.com/cognis-digital/maritimeint) — AIS grey/dark-fleet detection: watchlist + sanctions cross-reference
+- [`geoaoi-pro`](https://github.com/cognis-digital/geoaoi-pro) — MIL-STD-2525 symbology + AOI helpers · [`geolens`](https://github.com/cognis-digital/geolens) — image geolocation
+- [`stixgen`](https://github.com/cognis-digital/stixgen) · [`attackmap`](https://github.com/cognis-digital/attackmap) · [`ttphunt`](https://github.com/cognis-digital/ttphunt) — threat-intel tooling
+- [`edgemesh`](https://github.com/cognis-digital/edgemesh) — run any model privately across your own hardware
+
+**280+ open security & OSINT tools →** [github.com/cognis-digital](https://github.com/cognis-digital)
+
 ## License
 
 Code: MIT ([LICENSE](LICENSE)). Data & docs: CC BY 4.0 ([LICENSE-DATA](LICENSE-DATA)).
