@@ -33,6 +33,24 @@ Human-readable write-ups:
 python scripts/validate.py     # stdlib only; checks schema, keys, and source URLs
 ```
 
+## Install & run the NVIDIA models
+
+The NVIDIA HF index isn't just a list — `install_models.py` is a customizable,
+multi-step menu that downloads and runs a catalogued model **for its documented
+purpose** (segmentation, ASR, vision-language, embeddings, LLM, vision backbone):
+
+```bash
+python install_models.py        # menu: pick category -> model -> install / download / write a run-script
+```
+
+It generates real, runnable `transformers` snippets where the model runs there; for
+models that need a special runtime (NeMo for ASR, the Isaac/Cosmos toolkits for
+GR00T/Cosmos) it downloads the weights and points you to the model card rather than
+faking a snippet.
+
+> Scope: this is general-purpose ML tooling. It does **not** wire any model into
+> drone control, navigation, or targeting — see [DISCLAIMER.md](DISCLAIMER.md).
+
 ## Sourcing & honesty
 
 Specs are *publicly reported* figures and vary between sources (especially

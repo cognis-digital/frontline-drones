@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.0] — 2026-06-13
+### Added
+- `install_models.py` — a customizable, stdlib multi-step menu that turns the NVIDIA
+  HF index into working tooling: pick category → model → install / download / write a
+  ready-to-run script. Generates real `transformers` run-snippets for runnable
+  categories (segmentation, vision-language, LLM, embeddings, vision backbone) and
+  downloads + points to the model card for special-runtime ones (NeMo ASR,
+  Isaac/Cosmos). General ML tooling only — **no** drone control/targeting (DISCLAIMER).
+- CI self-test (`install_models.py --selftest`) — stdlib, no downloads.
+
 ## [0.1.0] — 2026-06-13
 Initial release.
 
