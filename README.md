@@ -76,3 +76,6 @@ citing.
 ## License
 
 Code: MIT ([LICENSE](LICENSE)). Data & docs: CC BY 4.0 ([LICENSE-DATA](LICENSE-DATA)).
+
+---
+📡 **[Interop map](INTEROP.md)** — how this repo composes with the rest of the Cognis suite (private-AI backbone, agent language + cognition, domain intelligence).
