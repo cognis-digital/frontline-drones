@@ -1,0 +1,25 @@
+id,name,manufacturer,country,role,range_km,endurance,cruise_speed_kmh,published_warhead,propulsion,operators,source_url
+shahed-136,Shahed-136 / Geran-2,Shahed Aviation / HESA (RU-built Geran-2),IR/RU,loitering_munition,2500,,185,~50 kg (later RU variants up to ~90 kg reported),piston (MD-550-type),"RU, IR",https://en.wikipedia.org/wiki/HESA_Shahed_136
+geran-3,Geran-3 / Shahed-238,Shahed (IR) / RU,IR/RU,loitering_munition,1200,~2 h,600,~50 kg,turbojet,RU,https://en.wikipedia.org/wiki/Shahed_drones
+lancet,ZALA Lancet (Izd-51/52/53),ZALA Aero / Kalashnikov,RU,loitering_munition,40-70 (Izd-53 >200 reported),,80-110,~1-5+ kg by variant,electric (ICE on long-range),RU,https://en.wikipedia.org/wiki/ZALA_Lancet
+orlan-10,Orlan-10,Special Technology Center,RU,isr_ew_relay,120-600 (via relay),16-18 h,110-150,n/a (ISR),ICE,RU,https://en.wikipedia.org/wiki/Orlan-10
+zala-421-16e,ZALA 421-16E / Supercam,ZALA Aero,RU,isr,150,6-7 h,65-110,n/a (ISR),electric/ICE,RU,https://www.airforce-technology.com/projects/zala-421-16e5-unmanned-aircraft-system/
+mohajer-6,Mohajer-6,Qods Aviation / HESA,IR,isr_strike,200,12 h,200,up to 4 PGMs (~100 kg payload),piston (~115 hp),"IR, RU",https://en.wikipedia.org/wiki/Qods_Mohajer
+bayraktar-tb2,Bayraktar TB2,Baykar,TR,isr_strike,300,27+ h,222,~150 kg payload,Rotax 912 (100 hp),"TR, UA, AZ, 30+ states",https://www.militaryfactory.com/aircraft/detail.php?aircraft_id=1679
+bayraktar-akinci,Bayraktar Akinci,Baykar,TR,strike_isr,5000,20-24 h,~278,>1500 kg payload,twin turboprop,"TR, PK, SA",https://en.wikipedia.org/wiki/Baykar_Bayraktar_Akinci
+switchblade-300,Switchblade 300,AeroVironment,US,loitering_munition,10,~15 min,101,anti-personnel,electric,"US, UA",https://en.wikipedia.org/wiki/AeroVironment_Switchblade
+switchblade-600,Switchblade 600,AeroVironment,US,loitering_munition,40,~40 min,113,anti-armor,electric,"US, UA",https://www.avinc.com/lms/switchblade-600
+phoenix-ghost,Phoenix Ghost (family),AEVEX Aerospace,US,loitering_munition,120 (Atlas),1-2 h+,,~3.7 kg payload (Atlas),electric,"US, UA",https://en.wikipedia.org/wiki/Aevex_Phoenix_Ghost
+liutyi,Liutyi (AN-196),Ukroboronprom,UA,loitering_munition,2000,,,~50-75 kg,piston,UA,https://en.wikipedia.org/wiki/Liutyi
+aq-400-scythe,AQ-400 Scythe,Terminal Autonomy,UA,loitering_munition,750-900,,144,~32 kg payload,piston,UA,https://en.wikipedia.org/wiki/Terminal_Autonomy_AQ-400_Scythe
+palianytsia,Palianytsia,Ukraine (state),UA,strike,650,,~900,~100 kg payload,turbojet,UA,https://en.defence-ua.com/weapon_and_tech/specifications_of_ukrainian_palianytsia_rocket_drone_revealed-15685.html
+bober,Bober / Beaver (UJ-26),HUR + Ukrainian industry,UA,loitering_munition,1000,,150-200,~20-50 kg reported,piston,UA,https://en.wikipedia.org/wiki/Bober_(drone)
+sting,STING,Wild Hornets,UA,counter_uas_interceptor,25,,280,interceptor (no warhead listed),electric quad,UA,https://en.wikipedia.org/wiki/Sting_(drone)
+magura-v5,Magura V5,Ukraine (HUR/GUR),UA,usv,400-800 reported,,~78 (42 kn),~320 kg payload,waterjet,UA,https://en.wikipedia.org/wiki/MAGURA_V5
+sea-baby,Sea Baby,Ukraine (SBU),UA,usv,1000-1500,,~90,~850-2000 kg payload,marine,UA,https://en.wikipedia.org/wiki/Sea_Baby
+mq-9-reaper,MQ-9 Reaper,General Atomics,US,isr_strike,1850,27+ h,~444,~1700 kg payload,turboprop (TPE331-10),"US, UK, IT, FR",https://www.ga-asi.com/remotely-piloted-aircraft/mq-9a
+rq-4-global-hawk,RQ-4 Global Hawk,Northrop Grumman,US,isr,22800,34 h,575,n/a (ISR),turbofan (F137),"US, NATO AGS",https://www.airandspaceforces.com/weapons/rq-4/
+iai-heron,IAI Heron,Israel Aerospace Industries,IL,isr,1000,45 h,~278,n/a (ISR),piston,"IL, IN",https://en.wikipedia.org/wiki/IAI_Heron
+wing-loong-2,Wing Loong II,AVIC / Chengdu,CN,isr_strike,1000,32+ h,370,payload ~480 kg,turboprop,"CN, UAE",https://www.globalmilitary.net/aircraft/wing-loong-ii/
+ch-4,CASC CH-4 Rainbow,CASC,CN,isr_strike,3500-5000,30-40 h,435,~250-345 kg payload,piston,"CN, IQ",https://en.wikipedia.org/wiki/CASC_Rainbow
+ch-5,CASC CH-5 Rainbow,CASC,CN,isr_strike,10000,60 h,,~1000 kg payload,piston,CN,https://www.militaryfactory.com/aircraft/detail.php?aircraft_id=1927

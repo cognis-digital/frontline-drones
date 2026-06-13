@@ -1,0 +1,20 @@
+repo_id,description,modality,license,category,url
+nvidia/GR00T-N1.5-3B,Open humanoid robot foundation model (cross-embodiment VLA),robotics_foundation_vla,NVIDIA proprietary non-commercial,robotics_foundation,https://huggingface.co/nvidia/GR00T-N1.5-3B
+nvidia/GR00T-N1.7-DROID,GR00T N1.7 post-trained on the DROID dataset,robotics_foundation_vla,Apache-2.0 / commercial,robotics_foundation,https://huggingface.co/nvidia/GR00T-N1.7-DROID
+nvidia/Cosmos-1.0-Diffusion-7B-Text2World,Diffusion world model generating video worlds from text,world_model,NVIDIA Open Model License (gated),world_model,https://huggingface.co/nvidia/Cosmos-1.0-Diffusion-7B-Text2World
+nvidia/Cosmos-Predict2.5-2B,Predictive world foundation model,world_model,NVIDIA Open Model License (gated),world_model,https://huggingface.co/nvidia/Cosmos-Predict2.5-2B
+nvidia/Cosmos-Transfer-LidarGen,Generates LiDAR point-cloud range maps,world_model_lidar,NVIDIA Open Model License (gated),world_model,https://huggingface.co/nvidia/Cosmos-Transfer-LidarGen
+nvidia/Cosmos-Reason1-7B,Physical-common-sense reasoning for embodied decisions,vision_language_reasoning,NVIDIA Open Model License (gated),world_model,https://huggingface.co/nvidia/Cosmos-Reason1-7B
+nvidia/RADIO,AM-RADIO agglomerative vision backbone (distills CLIP+DINOv2+SAM),vision_backbone,NVIDIA license (research),vision_backbone,https://huggingface.co/nvidia/RADIO
+nvidia/C-RADIOv3-H,Commercial RADIO v3 vision backbone (Huge),vision_backbone,NVIDIA Open Model License,vision_backbone,https://huggingface.co/nvidia/C-RADIOv3-H
+nvidia/mit-b0,Mix Transformer (MiT) backbone for SegFormer,segmentation_backbone,NVIDIA license (other),segmentation,https://huggingface.co/nvidia/mit-b0
+nvidia/segformer-b0-finetuned-cityscapes-768-768,SegFormer semantic segmentation on Cityscapes,semantic_segmentation,NVIDIA license (other),segmentation,https://huggingface.co/nvidia/segformer-b0-finetuned-cityscapes-768-768
+nvidia/canary-1b-v2,~1B multilingual ASR + translation,asr_speech_translation,CC-BY-4.0,speech,https://huggingface.co/nvidia/canary-1b-v2
+nvidia/parakeet-tdt-0.6b-v3,600M multilingual real-time ASR,asr,CC-BY-4.0,speech,https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3
+nvidia/audio-flamingo-3,Audio-language understanding model,audio_language,NVIDIA OneWay Noncommercial,speech,https://huggingface.co/nvidia/audio-flamingo-3
+nvidia/Nemotron-4-340B-Base,340B base LLM (synthetic-data focus),llm,NVIDIA Open Model License,llm,https://huggingface.co/nvidia/Nemotron-4-340B-Base
+nvidia/NVIDIA-Nemotron-Nano-9B-v2,9B efficient reasoning LLM,llm,NVIDIA Open Model License,llm,https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
+nvidia/Llama-3.1-Nemotron-Nano-VL-8B-V1,8B vision-language model (image+text),vision_language,NVIDIA Open License + Llama 3.1 Community,vision_language,https://huggingface.co/nvidia/Llama-3.1-Nemotron-Nano-VL-8B-V1
+nvidia/nemotron-ocr-v2,Multilingual OCR model,ocr,NVIDIA license,vision_language,https://huggingface.co/nvidia/nemotron-ocr-v2
+nvidia/NV-Embed-v2,Generalist text embedding model,text_embeddings,CC-BY-NC-4.0,embeddings,https://huggingface.co/nvidia/NV-Embed-v2
+nvidia/llama-nemotron-embed-vl-1b-v2,1B multimodal embedding (image + image-text retrieval),multimodal_embeddings,NVIDIA license,embeddings,https://huggingface.co/nvidia/llama-nemotron-embed-vl-1b-v2

@@ -1,0 +1,15 @@
+id,name,vendor,category,use_cases,sdk,platforms,license,docs_url
+dji-mavic-3-enterprise,DJI Mavic 3 Enterprise,DJI,enterprise_quadcopter,"mapping,inspection,public_safety,SAR",Mobile SDK + Payload SDK + Cloud API,"iOS,Android",proprietary,https://enterprise.dji.com/mavic-3-enterprise
+dji-matrice-350,DJI Matrice 350 RTK,DJI,industrial_platform,"survey,LiDAR,inspection,SAR",Payload SDK + Mobile SDK,"iOS,Android",proprietary,https://developer.dji.com/payload-sdk/
+dji-agras-t50,DJI Agras T50,DJI,agriculture,"crop_spraying,spreading",limited (ag app),dedicated controller,proprietary,https://ag.dji.com/t50
+skydio-x10,Skydio X10,Skydio,ai_autonomy,"public_safety,DFR,inspection,SAR,security",Skydio Cloud REST API,"browser,REST/JSON,Python",proprietary,https://apidocs.skydio.com/reference/introduction
+autel-evo-max-4t,Autel EVO Max 4T,Autel Robotics,enterprise_quadcopter,"mapping,inspection,public_safety,SAR",Mobile SDK v2 + Payload SDK + Cloud SDK,"iOS,Android",proprietary,https://www.autelpilot.com/products/autel-robotics-evo-max-4t
+parrot-anafi-ai,Parrot ANAFI Ai,Parrot,pro_camera_4g,"mapping,inspection,cinematography",Ground SDK + Air SDK + Olympe (Python),"iOS,Android,Linux",mixed (SDK open components),https://developer.parrot.com/docs/index.html
+sensefly-ebee-x,senseFly eBee X,AgEagle,fixed_wing_mapping,"mapping,GIS,precision_agriculture",eMotion ground station,Windows,proprietary,https://ageagle.com/
+px4,PX4 Autopilot,Dronecode/Linux Foundation,open_flight_stack,"mapping,agriculture,inspection,delivery,research",MAVSDK + ROS 2 bridge,"Pixhawk/NuttX, SITL on Linux/macOS/Win",BSD-3-Clause,https://docs.px4.io
+ardupilot,ArduPilot,ArduPilot project,open_flight_stack,"mapping,agriculture,inspection,delivery,marine,research",MAVLink + Mission Planner/MAVProxy/DroneKit,"Pixhawk + many boards",GPLv3,https://ardupilot.org
+mavlink,MAVLink,MAVLink project (Dronecode),protocol,"drone<->GCS<->payload messaging",codegen for C/C++/Python/Java/TS,cross-platform,MIT,https://mavlink.io/en/
+qgroundcontrol,QGroundControl,Dronecode,ground_control_station,"flight_control,mission_planning,config","MAVLink-based,pluggable","Windows,macOS,Linux,Android,iOS",Apache-2.0 OR GPLv3,https://docs.qgroundcontrol.com/master/
+ros2,ROS 2,Open Robotics,robotics_middleware,"autonomy,perception,navigation,research",rclcpp / rclpy,"Ubuntu (primary), exp Win/macOS",Apache-2.0,https://docs.ros.org
+gazebo,Gazebo,Open Robotics,simulator,"simulation,test_before_field",plugins/SDF,"Linux (pairs w/ ROS2/PX4 SITL)",Apache-2.0,https://gazebosim.org
+pixhawk,Pixhawk,Dronecode,open_hardware_fc,"reference flight controller for PX4/ArduPilot",open hardware standard,hardware standard,open hardware (CC-BY-SA family),https://pixhawk.org
