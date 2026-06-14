@@ -95,6 +95,11 @@ citing.
 
 **300+ open security & OSINT tools →** [github.com/cognis-digital](https://github.com/cognis-digital)
 
+## Integrations
+
+Forward `frontline-drones`'s findings to STIX/MISP/Sigma/Splunk/Elastic/Slack/webhooks via
+[`cognis-connect`](https://github.com/cognis-digital/cognis-connect). See **[INTEGRATIONS.md](INTEGRATIONS.md)**.
+
 ## License
 
 Code: MIT ([LICENSE](LICENSE)). Data & docs: CC BY 4.0 ([LICENSE-DATA](LICENSE-DATA)).
