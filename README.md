@@ -13,6 +13,39 @@ contains **no** operational, assembly, flight-control, guidance, or targeting
 instructions, and nothing about modifying any platform for weapons. See
 [DISCLAIMER.md](DISCLAIMER.md).
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+  "drones": [
+    {
+      "id": "drone-001",
+      "battery_level": 75,
+      "location": {
+        "latitude": 37.7749,
+        "longitude": -122.4194
+      },
+      "status": "online"
+    },
+    {
+      "id": "drone-002",
+      "battery_level": 50,
+      "location": {
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "status": "offline"
+    }
+  ]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## How it's organized
 
 ```mermaid
