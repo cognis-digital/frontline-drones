@@ -1,25 +1,26 @@
-# Disclaimer & scope
+# Disclaimer & Legal Notice
 
-**Purpose.** `frontline-drones` is a descriptive, educational, open-source
-reference catalog of the publicly-documented drone landscape and of openly-
-published AI models. It exists for awareness, research, journalism, policy, and
-market analysis — the same genre as IISS, RUSI, CSIS, and Hugging Face model
-indexes.
+(c) 2026 Cognis Digital LLC (Wyoming, USA). All rights reserved.
+Licensed under the Cognis Open Collaboration License (COCL) v1.0 - see LICENSE.
 
-**What this is not.** This repository contains **no** operational content: no
-build/assembly instructions, no payload/fuzing/warhead engineering, no flight-
-control, navigation, guidance, or targeting procedures, and no instructions for
-modifying any platform for weapons or for integrating any model into a control or
-targeting pipeline. It documents *that* systems and models exist and their
-publicly-reported characteristics — nothing about *how to operate or weaponize*
-them.
+## No Warranty & Limitation of Liability
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. IN NO EVENT SHALL Cognis Digital LLC, its members, or contributors BE LIABLE for any claim, loss, or damages (direct, indirect, incidental, consequential, or punitive) arising from or in connection with the Software or its use, even if advised of the possibility. You assume all risk and are solely responsible for your use.
 
-**Sourcing.** Specifications are publicly reported and often vary between sources;
-representative values are given with a citation per row. Belligerent self-reported
-claims should be treated as such. License/gating on the NVIDIA models changes —
-confirm on each model card. Verify any figure against the primary source before
-relying on it. Corrections welcome via issue or PR.
+## Authorized Use Only (dual-use security software)
+Use only against systems, networks, accounts, and data you own or are **explicitly authorized in writing** to test, and in full compliance with applicable law. You are solely responsible for your use. Unauthorized use may be illegal.
 
-**Compliance.** Nothing here is export-controlled technical data; it is a
-compilation of already-public information. Users remain responsible for complying
-with applicable laws.
+## AI Output Notice
+AI/ML outputs are probabilistic and may be inaccurate, incomplete, biased, or fabricated ("hallucinations"). Verify independently before relying on them; do not use outputs as the sole basis for consequential decisions.
+
+## Defensive / OSINT Use Only
+Provided strictly for lawful situational-awareness, OSINT, force-protection, research, and educational use. **Not** for weaponization, targeting, autonomous-weapon control, or any use intended to cause physical harm.
+
+## License Terms (COCL v1.0 summary)
+- **Source-available, not OSI open-source.** Free for **Non-Commercial Use** (personal, research, education, authorized security testing, <=30-day internal eval).
+- **Commercial Use requires a separate license** - contact licensing@cognis.digital.
+- Retain this notice, the LICENSE, and all attribution in copies/derivatives; mark modified files as changed.
+- **Contributions** are licensed inbound=outbound and grant Cognis a perpetual, sublicensable, relicensable license (enables dual-licensing).
+- Limited patent grant; terminates if you initiate patent litigation over the Software.
+- No trademark rights to "Cognis"/"Cognis Digital" beyond customary attribution.
+- License terminates on uncured breach (30 days). Full terms govern: see LICENSE.
+Questions: legal@cognis.digital - https://cognis.digital
