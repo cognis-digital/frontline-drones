@@ -71,13 +71,112 @@ Human-readable write-ups:
 - [`docs/commercial-and-open.md`](docs/commercial-and-open.md)
 - [`docs/nvidia-models.md`](docs/nvidia-models.md)
 - [`docs/counter-uas-selection.md`](docs/counter-uas-selection.md) — defensive drone-detection sensor selection guide
-- [`SOURCES.md`](SOURCES.md) · [`CHANGELOG.md`](CHANGELOG.md)
+- [`docs/USAGE.md`](docs/USAGE.md) — full query-CLI reference · [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the pieces fit
+- [`ROADMAP.md`](ROADMAP.md) · [`SOURCES.md`](SOURCES.md) · [`CHANGELOG.md`](CHANGELOG.md)
 
-## Validate
+## Query the catalog (CLI)
+
+The catalog isn't just files to read — a small, **standard-library-only** query
+tool ships with it. Install puts a `frontline-drones` command on your `PATH`
+(or run it as `python -m frontline_drones` with no install):
 
 ```bash
-python scripts/validate.py     # stdlib only; checks schema, keys, and source URLs
+pip install -e .
+frontline-drones datasets          # list the three datasets + row counts
 ```
+
+Filter, sort, search, aggregate and export any dataset, in table / JSON / CSV /
+Markdown / findings form:
+
+```bash
+# US loitering munitions, as JSON, id + role only
+frontline-drones list military --where country=US --where role=loitering \
+  --columns id,role --format json
+
+# The five longest-ranged systems (numeric sort over a messy spec column)
+frontline-drones list military --sort range_km --numeric --reverse --limit 5 \
+  --columns id,name,range_km
+
+# Full-text search, restricted to one field
+frontline-drones search nvidia segformer --format json
+
+# Value counts, splitting multi-valued cells ("RU, IR") into individual tallies
+frontline-drones stats military --by operators --split ,
+
+# Export a filtered slice to a file
+frontline-drones export commercial --where vendor=DJI --format md --out dji.md
+```
+
+Everything is available as a library too:
+
+```python
+from frontline_drones import load_dataset, filter_rows, stats, to_json
+rows = load_dataset("military")
+print(to_json(filter_rows(rows, {"country": "US"}), columns=["id", "name"]))
+print(stats(rows, "country").most_common(3))
+```
+
+The `findings` format emits normalized records (`id`/`title`/`source`/`url`/
+`dataset`/`attributes`) meant to pipe straight into downstream tooling — see
+[INTEGRATIONS.md](INTEGRATIONS.md). Full reference: [`docs/USAGE.md`](docs/USAGE.md).
+
+## Architecture
+
+This is a **data-first** project. The source of truth is the CSV datasets; the
+validator, the model installer, and the query CLI are thin, dependency-light
+layers on top. See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full
+picture.
+
+```
+data/*.csv ──load──▶ list[dict] ──filter/search/sort/stats──▶ render (json/csv/md/table/findings)
+```
+
+- **Data layer** — `data/*.csv`, one row per item, one primary source per row.
+- **Tooling layer** — `scripts/validate.py` (CI gate), `install_models.py`
+  (NVIDIA HF installer), `livesearch.py` (keyless live search).
+- **Query layer** — the `frontline_drones` package: `catalog.py` (query),
+  `export.py` (render), `cli.py` (the `frontline-drones` command).
+
+## Validate & test
+
+```bash
+python scripts/validate.py        # stdlib only; checks schema, keys, and source URLs
+python install_models.py --selftest   # stdlib self-check of the model installer
+
+pip install -e ".[dev]"           # install pytest + ruff
+python -m pytest -q               # run the full test suite
+python -m ruff check .            # lint
+```
+
+## Configuration reference
+
+The tools are configuration-light by design:
+
+| Setting | Where | Effect |
+|---|---|---|
+| `PYTHONUTF8=1` | environment | Recommended on Windows so UTF-8 CSV/JSON I/O is exact. |
+| `--out PATH` | `list`/`search`/`stats`/`export` | Write output to a file (UTF-8, `\n` newlines) instead of stdout. |
+| `--format` | rendering subcommands | `table` (default), `json`, `csv`, `md`, `findings`. |
+| `data_dir=` | `load_dataset()` / `load_all()` (library) | Point the loader at an alternate directory of catalog CSVs. |
+
+## FAQ
+
+**Is this operational?** No. It is a descriptive reference of *what publicly
+exists*, with sources. It contains no assembly, flight-control, navigation,
+guidance, or targeting content — see [DISCLAIMER.md](DISCLAIMER.md).
+
+**Where do the specs come from?** Publicly reported figures, one primary source
+per row. Values vary between sources (especially range/warhead for one-way-attack
+drones); representative published values are given and annotated when sources
+disagree. Verify against the primary page before citing.
+
+**Do I need any dependencies?** No — the validator, installer, live-search helper
+and query engine are standard library only. `pytest`/`ruff` are dev-only, and the
+heavy ML runtimes are opt-in via `install_models.py`.
+
+**Can I add a system or model?** Yes. Add a well-sourced row to the relevant CSV
+(keep the primary-key unique and include a source URL), run
+`python scripts/validate.py`, and open a PR. See [`ROADMAP.md`](ROADMAP.md).
 
 <!-- cognis:domains:start -->
 ## Domains

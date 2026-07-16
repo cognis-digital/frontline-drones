@@ -1,3 +1,15 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Python packaging / tooling artifacts
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Run-scripts emitted by install_models.py
+run_*.py

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frontline-drones"
+version = "0.2.0"
+description = "Queryable, citation-grade catalog of frontline & commercial drones plus the open autonomy ecosystem and NVIDIA's open HF robotics/perception models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "COCL-1.0" }
+authors = [{ name = "Cognis Digital LLC" }]
+keywords = ["drones", "uav", "catalog", "counter-uas", "osint", "px4", "ardupilot", "mavlink"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/cognis-digital/frontline-drones"
+Source = "https://github.com/cognis-digital/frontline-drones"
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+frontline-drones = "frontline_drones.cli:main"
+
+[tool.setuptools]
+packages = ["frontline_drones"]
+# The datasets live at the repo root under data/; include them in the wheel.
+[tool.setuptools.package-data]
+frontline_drones = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
