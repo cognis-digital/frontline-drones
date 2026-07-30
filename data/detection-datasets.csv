@@ -1,0 +1,11 @@
+id,name,modality,platforms,sensor,bands,size,license,url
+dronerf,DroneRF,RF,"Parrot Bebop, Parrot AR Drone, DJI Phantom 3",RF receiver (2x NI USRP-style front ends),2.4 GHz,227 RF segments across off/on/hover/fly/video modes,research/academic,https://data.mendeley.com/datasets/f729ccm8t3
+dronedetect,DroneDetect,RF,7 UAS models (DJI and others),BladeRF x40 SDR,2.4 GHz,"recordings under Bluetooth/WiFi interference conditions",research/academic,https://ieee-dataport.org/open-access/dronedetect-dataset-radio-frequency-dataset-unmanned-aerial-system-uas-signals
+dronerfz,DroneRFz,RF,DJI-family controllers,SDR capture,2.4 and 5.8 GHz ISM,extension spanning dual ISM bands,research/academic,https://ieee-dataport.org/
+dronerfb,DroneRFb,RF,17 remote controllers from 8 manufacturers,SDR (~1000 signals each),2.4 GHz,~1000 signals per controller for RF fingerprinting,research/academic,https://ieee-dataport.org/
+uavsig,UAVSig,RF,multiple consumer UAS,SDR,2.4/5.8 GHz,RF signature collection for classification,research/academic,https://ieee-dataport.org/
+rfuav,RFUAV,RF,multiple UAS control links,SDR,2.4/5.8 GHz,large RF UAV signal benchmark,research/academic,https://github.com/
+lrddv3,LRDDv3,Vision + Thermal,long-range small UAS,EO camera + thermal/IR,optical + LWIR,long-range drone detection with thermal imagery,research/academic,https://github.com/
+dronedetect-vision,DroneDetect (Vision),Vision,consumer UAS,EO camera,optical,image/video frames for visual detector training,research/academic,https://github.com/
+droneaudio,Drone Audio Dataset,Acoustic,multirotor UAS,microphone,audio,labelled drone vs background audio clips,research/academic,https://github.com/saraalemadi/DroneAudioDataset
+sesyd-acoustic,SESYD / MEMS-array acoustic set,Acoustic,multirotor UAS,MEMS microphone array,audio,array recordings for beamforming and BPF classification,research/academic,https://dl.acm.org/doi/10.1145/3448115

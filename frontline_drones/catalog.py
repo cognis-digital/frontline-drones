@@ -66,6 +66,54 @@ DATASETS: dict[str, Dataset] = {
         default_columns=("repo_id", "modality", "category", "license", "url"),
         aliases=("nv", "models", "hf", "nvidia_hf_models"),
     ),
+    # --- Defensive counter-UAS DETECTION reference datasets -----------------
+    # Classification/situational-awareness reference only: these catalog what a
+    # PASSIVE detector would observe (RF/acoustic/radar signatures) and which
+    # public corpora and detection products exist. They contain no transmit,
+    # jam, spoof, or engagement parameters. See docs/detection-signatures.md.
+    "rf": Dataset(
+        name="rf",
+        filename="rf-signatures.csv",
+        key="id",
+        title="RF control-link signatures (passive classification reference)",
+        default_columns=("id", "name", "control_band", "video_protocol",
+                         "frequency_hopping", "source_url"),
+        aliases=("rf_signatures", "rf-signatures", "rfsig", "controllink"),
+    ),
+    "acoustic": Dataset(
+        name="acoustic",
+        filename="acoustic-signatures.csv",
+        key="id",
+        title="Acoustic BPF signatures (passive detection reference)",
+        default_columns=("id", "name", "rotor_class", "bpf_fundamental_hz",
+                         "detect_range_m", "source_url"),
+        aliases=("acoustic_signatures", "acoustic-signatures", "sound", "bpf"),
+    ),
+    "radar": Dataset(
+        name="radar",
+        filename="radar-signatures.csv",
+        key="id",
+        title="Micro-Doppler radar signatures + bird discriminants (reference)",
+        default_columns=("id", "name", "platform_class", "recommended_band",
+                         "bird_discriminant", "source_url"),
+        aliases=("radar_signatures", "radar-signatures", "microdoppler", "micro-doppler"),
+    ),
+    "corpora": Dataset(
+        name="corpora",
+        filename="detection-datasets.csv",
+        key="id",
+        title="Public C-UAS detection datasets / training corpora index",
+        default_columns=("id", "name", "modality", "platforms", "license", "url"),
+        aliases=("detection_datasets", "detection-datasets", "training", "corpus"),
+    ),
+    "detectors": Dataset(
+        name="detectors",
+        filename="cuas-detection-systems.csv",
+        key="id",
+        title="Detection-only C-UAS systems (descriptive, non-endorsing)",
+        default_columns=("id", "name", "vendor", "sensor_mix", "detection_role", "source_url"),
+        aliases=("cuas", "detection_systems", "detection-systems", "systems"),
+    ),
 }
 
 

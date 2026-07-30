@@ -8,7 +8,10 @@ from frontline_drones import catalog
 
 
 def test_datasets_registry_is_well_formed():
-    assert set(catalog.DATASETS) == {"military", "commercial", "nvidia"}
+    assert set(catalog.DATASETS) == {
+        "military", "commercial", "nvidia",
+        "rf", "acoustic", "radar", "corpora", "detectors",
+    }
     for name, ds in catalog.DATASETS.items():
         assert ds.name == name
         assert ds.filename.endswith(".csv")

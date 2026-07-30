@@ -88,6 +88,82 @@ def to_table(rows: Sequence[Row], *, columns: Iterable[str] | None = None) -> st
     return "\n".join([header, rule, *body])
 
 
+SAPIENT_SCHEMA = "frontline-drones.sapient-detection/1"  # inspired by BSI Flex 335
+
+
+def to_sapient(
+    event: dict,
+    *,
+    sensor_id: str = "unspecified",
+    node_type: str = "fused-cuas",
+    report_id: str | None = None,
+) -> dict:
+    """Map a fused detection event to a SAPIENT / BSI Flex 335-inspired report.
+
+    Dstl's SAPIENT (published by BSI as BSI Flex 335) is an open C-UAS
+    sensor-fusion standard NATO has trialed; a sensor node emits detection
+    reports carrying a sensor identifier, detection, track and confidence. This
+    renderer produces a JSON-serialisable ``DetectionReport``-shaped dict from a
+    fused detection ``event`` (as produced by :mod:`frontline_drones.fusion` /
+    :mod:`frontline_drones.alerts`).
+
+    The report carries **detection / track fields only** - it deliberately has
+    no effector, task or engagement message, consistent with this project's
+    detection-only scope.
+
+    Args:
+        event: A dict with any of ``timestamp``, ``classified_type``,
+            ``fused_confidence``, ``severity``, ``sensors_fired``,
+            ``track_quality``, ``latitude``, ``longitude``, ``source_node``.
+        sensor_id / node_type: Reporting node identity.
+        report_id: Optional stable report identifier.
+
+    Returns:
+        A SAPIENT-inspired detection-report dict.
+    """
+    sensors = list(event.get("sensors_fired", []) or [])
+    confidence = float(event.get("fused_confidence", 0.0) or 0.0)
+    classified = event.get("classified_type", "unknown") or "unknown"
+
+    location: dict | None = None
+    if event.get("latitude") is not None and event.get("longitude") is not None:
+        location = {
+            "latitude": event["latitude"],
+            "longitude": event["longitude"],
+        }
+
+    detection = {
+        "classification": classified,
+        "confidence": round(confidence, 4),
+        "contributing_sensors": sensors,
+        # SAPIENT confidence is a fraction; expose the count for fusion checks.
+        "sensor_count": len(sensors),
+        "meets_fusion_baseline": len(sensors) >= 2,
+    }
+    if location is not None:
+        detection["location"] = location
+
+    track = {
+        "track_quality": round(float(event.get("track_quality", 1.0) or 0.0), 4),
+        "severity": event.get("severity", "none"),
+    }
+
+    return {
+        "schema": SAPIENT_SCHEMA,
+        "message_type": "DetectionReport",
+        "report_id": report_id or "",
+        "timestamp": event.get("timestamp", ""),
+        "sensor": {
+            "sensor_id": event.get("source_node", sensor_id) or sensor_id,
+            "node_type": node_type,
+        },
+        "detection": detection,
+        "track": track,
+        # Detection-only: no task/effector/engagement fields are emitted.
+        "note": "detection/track only - no effector or engagement content",
+    }
+
+
 def to_findings(
     rows: Sequence[Row],
     *,

@@ -29,7 +29,9 @@ from .catalog import (
     sort_rows,
     stats,
 )
+from .detection import render_card_text, signature_card
 from .export import to_csv, to_findings, to_json, to_markdown, to_table
+from .recommend import recommend as recommend_stack
 
 FORMATS = ("table", "json", "md", "csv", "findings")
 
@@ -125,7 +127,52 @@ def build_parser() -> argparse.ArgumentParser:
     exp = subs.add_parser("export", help="render selected columns to a file or stdout")
     _add_query_opts(exp)
 
+    rec = subs.add_parser(
+        "recommend",
+        help="recommend a fused DETECTION sensor stack for a threat + scenario",
+    )
+    rec.add_argument("threat", help="consumer_dji | fpv | fiber_optic | autonomous_waypoint")
+    rec.add_argument("scenario", help="fixed_site | mobile_convoy | dismounted | maritime")
+    rec.add_argument("--format", choices=("table", "json"), default="table")
+    rec.add_argument("--out", metavar="PATH", help="write to a file instead of stdout")
+
+    sig = subs.add_parser(
+        "signatures",
+        help="cross-modality (RF/acoustic/radar) signature card for a platform",
+    )
+    sig.add_argument("platform", help="platform token or unique substring (see `list rf`)")
+    sig.add_argument("--format", choices=("table", "json"), default="table")
+    sig.add_argument("--out", metavar="PATH", help="write to a file instead of stdout")
+
     return p
+
+
+def _render_recommendation(rec) -> str:
+    """Render a Recommendation as a human-readable detection-stack briefing."""
+    lines = [
+        f"Threat:    {rec.threat}",
+        f"Scenario:  {rec.scenario}",
+        "-" * 60,
+        f"Recommended DETECTION core:  {', '.join(rec.core_sensors)}",
+        f"Optional add-ons:            {', '.join(rec.optional_sensors) or '(none)'}",
+        "",
+        f"Rationale: {rec.rationale}",
+    ]
+    if rec.warnings:
+        lines.append("")
+        lines.append("Warnings:")
+        lines += [f"  ! {w}" for w in rec.warnings]
+    cov = rec.coverage
+    lines.append("")
+    lines.append(
+        f"Coverage: {'OK' if cov.covered else 'GAP'}"
+        f" | fusion baseline (>=2 modalities): {'met' if cov.meets_fusion_baseline else 'not met'}"
+    )
+    for gap in cov.gaps:
+        lines.append(f"  GAP: {gap}")
+    lines.append("")
+    lines.append(rec.mitigation)
+    return "\n".join(lines)
 
 
 def _emit(text: str, out: str | None) -> None:
@@ -144,6 +191,29 @@ def main(argv: Sequence[str] | None = None) -> int:
         lines = [f"{ds.name:<11} {len(load_dataset(ds.name)):>3} rows  {ds.title}"
                  for ds in DATASETS.values()]
         print("\n".join(lines))
+        return 0
+
+    if args.command == "recommend":
+        try:
+            rec = recommend_stack(args.threat, args.scenario)
+        except KeyError as exc:
+            parser.error(str(exc))
+            return 2  # pragma: no cover
+        if args.format == "json":
+            text = to_json([rec.to_dict()])
+        else:
+            text = _render_recommendation(rec)
+        _emit(text, args.out)
+        return 0
+
+    if args.command == "signatures":
+        try:
+            card = signature_card(args.platform)
+        except KeyError as exc:
+            parser.error(str(exc))
+            return 2  # pragma: no cover
+        text = to_json([card.to_dict()]) if args.format == "json" else render_card_text(card)
+        _emit(text, args.out)
         return 0
 
     try:

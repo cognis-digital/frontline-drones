@@ -1,0 +1,11 @@
+id,name,platform,rotor_class,rotor_count,bpf_fundamental_hz,harmonic_range_hz,detect_range_m,detection_notes,source_url
+dji-mavic-3,DJI Mavic 3 / Enterprise,dji-mavic-3,small_multirotor,4,~110-170,220-2000,300-500,Tonal blade-passing-frequency peaks plus harmonics over broadband rotor noise; log-mel/MFCC CNN classification,https://dl.acm.org/doi/10.1145/3448115
+dji-fpv,DJI FPV / Avata,dji-fpv,fpv_multirotor,4,~150-250,300-2500,200-400,Higher-RPM racing props raise the BPF fundamental and harmonic density,https://dl.acm.org/doi/10.1145/3448115
+dji-phantom-4,DJI Phantom 4 (legacy),dji-phantom-4,small_multirotor,4,~110-160,220-1800,300-500,Classic small-quad tonal signature; a common acoustic-dataset airframe,https://dl.acm.org/doi/10.1145/3448115
+autel-evo-max,Autel EVO Max 4T,autel-evo-max,small_multirotor,4,~110-170,220-2000,300-500,Signature similar to comparable-mass quads; BPF tracks rotor RPM,https://dl.acm.org/doi/10.1145/3448115
+fpv-5in-analog,FPV 5-inch (analog),fpv-5in-analog,fpv_multirotor,4,~180-280,360-3000,150-400,Aggressive throttle transients smear the BPF; harmonics extend high,https://dl.acm.org/doi/10.1145/3448115
+fpv-5in-digital,FPV 5-inch (digital HD),fpv-5in-digital,fpv_multirotor,4,~180-280,360-3000,150-400,Acoustically equivalent to analog 5-inch; airframe/props drive the tone,https://dl.acm.org/doi/10.1145/3448115
+parrot-anafi,Parrot ANAFI / Ai,parrot-anafi,micro_multirotor,4,~150-220,300-2000,150-300,Lightweight quad with quieter broadband floor; tonal BPF still keyed on,https://dl.acm.org/doi/10.1145/3448115
+fixed-wing-group2,Fixed-wing Group 2 UAS (generic),fixed-wing-group2,fixed_wing_prop,1,~60-120,120-600,300-800,Single tractor prop yields fewer tonal lines than a multirotor; engine tone dominates,https://en.wikipedia.org/wiki/Acoustic_signature
+shahed-136,Shahed-136 / Geran-2,shahed-136,fixed_wing_piston,1,~90-110,180-900,up to ~2500,Distinctive low piston-engine moped tone audible at long range even though RF is silent,https://en.wikipedia.org/wiki/HESA_Shahed_136
+wifi-toy-quad,WiFi micro / toy quadcopter,wifi-toy-quad,micro_multirotor,4,~200-350,400-3000,50-150,Very small props push the BPF high but low SPL limits range to tens of metres,https://dl.acm.org/doi/10.1145/3448115
