@@ -9,3 +9,22 @@ parrot-anafi,Parrot ANAFI / Ai,parrot-anafi,micro_multirotor,4,~150-220,300-2000
 fixed-wing-group2,Fixed-wing Group 2 UAS (generic),fixed-wing-group2,fixed_wing_prop,1,~60-120,120-600,300-800,Single tractor prop yields fewer tonal lines than a multirotor; engine tone dominates,https://en.wikipedia.org/wiki/Acoustic_signature
 shahed-136,Shahed-136 / Geran-2,shahed-136,fixed_wing_piston,1,~90-110,180-900,up to ~2500,Distinctive low piston-engine moped tone audible at long range even though RF is silent,https://en.wikipedia.org/wiki/HESA_Shahed_136
 wifi-toy-quad,WiFi micro / toy quadcopter,wifi-toy-quad,micro_multirotor,4,~200-350,400-3000,50-150,Very small props push the BPF high but low SPL limits range to tens of metres,https://dl.acm.org/doi/10.1145/3448115
+dji-mini-4-pro,DJI Mini 4 Pro,dji-mini-4-pro,small_multirotor,4,~140-220,280-2600,150-350,Sub-250g quad; small high-RPM props push the BPF fundamental up with dense harmonics,https://www.dji.com/mini-4-pro
+dji-air-3,DJI Air 3 / 3S,dji-air-3,small_multirotor,4,~120-190,240-2200,250-450,Mid-size folding quad; tonal BPF peaks over broadband rotor noise,https://www.dji.com/air-3
+dji-matrice-350,DJI Matrice 350 RTK,dji-matrice-350,heavy_multirotor,4,~80-140,160-1600,400-700,"Heavy-lift; larger slower props lower the BPF fundamental, strong low harmonics",https://enterprise.dji.com/matrice-350-rtk
+dji-mavic-2,DJI Mavic 2 (legacy),dji-mavic-2,small_multirotor,4,~110-175,220-2000,250-450,Legacy folding quad; classic small-multirotor BPF comb,https://dl.acm.org/doi/10.1145/3448115
+autel-evo-ii,Autel EVO II / Pro,autel-evo-ii,small_multirotor,4,~110-180,220-2100,250-450,Comparable prop geometry to Mavic-class; tonal BPF classification,https://www.autelrobotics.com/
+autel-evo-max-4t,Autel EVO Max 4T,autel-evo-max-4t,small_multirotor,4,~100-165,200-1900,300-500,"Enterprise quad; slightly larger props, lower fundamental",https://www.autelrobotics.com/
+skydio-x10,Skydio X10,skydio-x10,small_multirotor,4,~120-195,240-2200,250-450,Autonomous quad; BPF plus broadband; US-made ISR platform,https://www.skydio.com/skydio-x10
+parrot-anafi-usa,Parrot ANAFI USA,parrot-anafi-usa,small_multirotor,4,~130-210,260-2400,150-350,Lightweight quad; higher BPF from small props,https://www.parrot.com/us/drones/anafi-usa
+generic-5in-fpv,Generic 5-inch FPV racer,generic-5in-fpv,fpv_multirotor,4,~180-320,360-3000,150-350,High-RPM 5in props; elevated BPF fundamental and wide harmonic density,https://dl.acm.org/doi/10.1145/3448115
+generic-7in-fpv,Generic 7-inch FPV / long-range,generic-7in-fpv,fpv_multirotor,4,~150-260,300-2800,200-450,Long-range FPV; larger 7in props lower BPF vs 5in; used for one-way attack,https://dl.acm.org/doi/10.1145/3448115
+cinewhoop-fpv,FPV cinewhoop (ducted),cinewhoop-fpv,fpv_multirotor,4,~200-360,400-3200,80-250,Ducted small props raise BPF; shrouds alter broadband spectrum,https://dl.acm.org/doi/10.1145/3448115
+orlan-10,Orlan-10,orlan-10,fixed_wing_piston,1,~70-120,140-1300,800-2500,2-stroke piston + 2-blade tractor prop; steady tonal engine/prop harmonics,https://en.wikipedia.org/wiki/Orlan-10
+zala-421,ZALA 421-16E,zala-421,fixed_wing_electric,1,~75-125,150-1400,800-2500,Electric/piston ISR fixed-wing; prop BPF dominant,https://en.wikipedia.org/wiki/ZALA_Aero
+bayraktar-tb2,Bayraktar TB2,bayraktar-tb2,fixed_wing_piston,1,~55-95,110-1000,2000-5000,"Rotax-type engine + large 2-blade pusher prop; low fundamental, carries far",https://en.wikipedia.org/wiki/Bayraktar_TB2
+mohajer-6,Mohajer-6,mohajer-6,fixed_wing_piston,1,~55-95,110-1000,2000-5000,Piston MALE ISR/strike; low prop BPF,https://en.wikipedia.org/wiki/Mohajer-6
+supercam-s350,Supercam S350,supercam-s350,fixed_wing_electric,1,~90-150,180-1600,600-2000,Electric pusher ISR; higher-pitch prop tone than piston types,https://en.wikipedia.org/wiki/Supercam
+lancet-3,ZALA Lancet-3,lancet-3,loitering_electric,2,~130-240,260-2600,400-1200,"Electric double-X-wing loitering munition; multi-surface prop tone, quieter than piston types",https://en.wikipedia.org/wiki/ZALA_Lancet
+switchblade-300,AeroVironment Switchblade 300,switchblade-300,loitering_electric,1,~150-260,300-2800,300-900,"Small electric loitering munition; high-pitch prop BPF, low acoustic signature",https://www.avinc.com/lms/switchblade
+kub-bla,KUB-BLA,kub-bla,loitering_electric,1,~120-210,240-2400,400-1200,Electric delta loitering munition; prop BPF tonal cue,https://en.wikipedia.org/wiki/KUB-BLA
